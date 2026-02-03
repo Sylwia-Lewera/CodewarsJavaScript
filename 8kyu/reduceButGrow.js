@@ -4,7 +4,7 @@ Example:
 [1, 2, 3, 4] => 1 * 2 * 3 * 4 = 24
 */
 function grow(x){
-  if(!(typeof x === 'object' && x.hasOwnProperty('length'))) return "Invalis data provided!";
+  if(!(typeof x === 'object' && x.hasOwnProperty('length'))) return "Invalid data provided!";
   result = 1
   for(let i =0; i < x.length; i++) result *= x[i];
   return result;
