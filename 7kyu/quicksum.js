@@ -16,3 +16,20 @@ A C M
 1 x 1 + 3 x 3 + 5 * 13 = 75
 When the packet doesn't have only uppercase letters and spaces or just spaces the result to quicksum have to be zero (0).
 */
+function quicksum(packet){
+   if (typeof packet !== "string") return 0;
+
+  // validate packet (for not only uppercase letters and spaces)
+  if (!/^[A-Z](?:[A-Z ]*[A-Z])?$/.test(packet)) return 0; 
+
+  let sum = 0;
+
+  for (let i = 0; i < packet.length; i++) {
+    const ch = packet[i];
+    if (ch !== ' ') {
+      sum += (ch.charCodeAt(0) - 64) * (i + 1);
+    }
+  }
+
+  return sum;
+}
